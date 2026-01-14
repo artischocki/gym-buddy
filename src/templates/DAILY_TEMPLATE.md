@@ -144,7 +144,7 @@ function formatDDMMYY(d) {
   return window.moment(d).format("DD.MM.YY");
 }
 
-function getExerciseSets(exName) {
+function getExerciseSetsAndReps(exName) {
   let f = app.metadataCache.getFirstLinkpathDest(exName, "");
   if (!f) {
     f = app.vault.getAbstractFileByPath(`Excercises/${exName}.md`)
@@ -154,8 +154,9 @@ function getExerciseSets(exName) {
 
   const cache = app.metadataCache.getFileCache(f);
   const setsRaw = cache?.frontmatter?.sets;
+  const repsRaw = cache?.frontmatter?.reps;
   const sets = setsRaw == null ? null : Number(setsRaw);
-  return { file: f, sets: Number.isFinite(sets) ? sets : null };
+  return { file: f, sets: Number.isFinite(sets) ? sets : null, reps: repsRaw};
 }
 
 function escapeRegExp(s) {
@@ -245,7 +246,7 @@ const exerciseLinks = extractWikiLinks(workoutMd);
 for (let i = 0; i < exerciseLinks.length; i++) {
   const exName = exerciseLinks[i];
 
-  const { file: exFile, sets } = getExerciseSets(exName);
+  const { file: exFile, sets, reps } = getExerciseSetsAndReps(exName);
   const setCount = sets ?? 4;
 
   let refLabel = null;
@@ -267,7 +268,8 @@ for (let i = 0; i < exerciseLinks.length; i++) {
     }
   }
 
-  tR += `## ${i + 1}. [[${exName}]]\n---\n\n`;
+  tR += `## ${i + 1}. [[${exName}]]\n---\n`;
+  tR += `Rep Range: ${reps}\n\n`
   tR += buildTable(setCount, refLabel, refSets);
   tR += `\n\n`;
 }
