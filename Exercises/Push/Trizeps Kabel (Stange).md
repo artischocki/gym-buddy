@@ -2,7 +2,7 @@
 tags:
   - exercise
 sets: "3"
-reps: 10-15
+reps: 10 - 15
 ---
 ```dataviewjs
 const targetPath = dv.current().file.path;

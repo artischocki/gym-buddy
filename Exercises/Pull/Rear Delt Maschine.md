@@ -2,7 +2,7 @@
 tags:
   - exercise
 sets: "4"
-reps: 4 - 6
+reps: 12 - 20
 ---
 ```dataviewjs
 const targetPath = dv.current().file.path;
@@ -24,17 +24,15 @@ function parseTodaySets(md) {
   return sets;
 }
 
-// Fallback: Datum aus Dateiname parsen (unterstützt z.B. 2026-01-13 oder 13.01.26 / 13-01-26)
 function parseDateFromName(name) {
   // yyyy-mm-dd
   let m = name.match(/(\d{4})[-.](\d{2})[-.](\d{2})/);
   if (m) return new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
 
-  // dd.mm.yy oder dd-mm-yy
   m = name.match(/(\d{2})[-.](\d{2})[-.](\d{2})/);
   if (m) {
     const yy = Number(m[3]);
-    const yyyy = yy < 70 ? 2000 + yy : 1900 + yy; // 00-69 => 2000er, sonst 1900er
+    const yyyy = yy < 70 ? 2000 + yy : 1900 + yy;
     return new Date(yyyy, Number(m[2]) - 1, Number(m[1]));
   }
 
@@ -54,15 +52,15 @@ for (let p of linkedPages) {
   const sortKey =
     p.file.day ??
     parseDateFromName(p.file.name) ??
-    new Date(0); // ganz alt, falls gar nichts klappt
+    new Date(0);
 
   rows.push({ note: p.file.link, sets, sortKey });
 }
 
-// Neueste oben
+// Newest first
 rows.sort((a, b) => b.sortKey - a.sortKey);
 
-// Header dynamisch
+// Header dynamic
 const headers = ["Workout"];
 for (let i = 1; i <= maxSets; i++) headers.push(`${i} kg`, "reps");
 
