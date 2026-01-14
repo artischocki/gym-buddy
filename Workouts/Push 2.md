@@ -1,13 +1,8 @@
-Schrägbankdrücken LH – 4×5–8
+# 1. [[Schrägbankdrücken LH]]
+# 2. [[Schulterdrücken LH]]
 
-Overhead Press (stehend oder sitzend) – 3×4–6
-
-Maschinen-Brustpresse – 3×8–12 (kontrolliert, 2–3 s ecc)
-
-Kabel-Flys (low-to-high oder normal) – 3×12–20
-
-Seitheben Kabel einarmig – 3×12–20
-
-Skull Crusher / French Press – 3×8–12
-
-Trizeps Dips an Bank/Ring Pushdowns – 2×12–20
+# 3. [[Trizeps Kabel (einarmig)]]
+# 4. [[Maschinen-Brustpresse]]
+# 5. [[Flys - Maschine]]
+# 6. [[Seitenheben Kabel]]
+# 7. [[Skull Crushers SZ]]

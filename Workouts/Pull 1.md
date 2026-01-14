@@ -1,13 +1,7 @@
-Klimmzüge (neutral/weit, Zusatzgewicht wenn möglich) – 4×4–8
-
-Langhantel-Rudern (oder Chest-supported Row) – 4×6–10
-
-Lat Pulldown (enger Griff) – 3×8–12
-
-Sitzendes Kabelrudern – 3×10–15
-
-Face Pulls / Reverse Flys – 3×12–20
-
-Bizepscurls LH – 3×6–10
-
-Hammer Curls – 2×10–15
+# 1. [[Klimmzüge]]
+# 2. [[LH Rudern]]
+# 3. [[Lat Pulldown (eng)]]
+# 4. [[Curl Kabel einarmig (negativ)]]
+# 5. [[Rudern Kabel (eng)]]
+# 6. [[Hammer Curls]]
+# 7. [[Face Pulls]]
