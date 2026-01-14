@@ -10,7 +10,7 @@ Push 1 -> Pull 1 -> Legs 1 -> Push 2 -> Pull 2 -> Legs 2 -> Repeat...
 ```
 
 The daily note gets filled with all **Exercises** defined in the **Workouts**:
-![[Pasted image 20260114140619.png]]
+![daily note](src/resources/readme/Pasted image 20260114140619.png)
 
 
 
