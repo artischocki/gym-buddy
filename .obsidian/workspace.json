@@ -15,7 +15,7 @@
               "state": {
                 "file": "README.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "README"
@@ -196,10 +196,11 @@
   },
   "active": "c3fb7b177125c905",
   "lastOpenFiles": [
+    "Untitled.md",
+    "README.md",
     "src/resources/readme/Pasted image 20260114140619.png",
     "src/resources/daily/14.01.26.md",
     "src/resources/daily/20.01.26.md",
-    "README.md",
     "Exercises/Push/Bankdrücken LH.md",
     "src/resources/readme.md",
     "src/resources/readme",
