@@ -26,7 +26,7 @@ You have to reference the exercises you define in those files correctly.
 
 ## Exercise Files
 You can track your progress in the exercise files:
-![exercise file](Pasted%20image%2020260114140002.png)
+![exercise file](src/resources/readme/Pasted%20image%2020260114140002.png)
 
 To create new exercises use the [[exercise_template]] file.
 Don't forget to edit the properties (sets and reps). 
