@@ -4,6 +4,7 @@ tags:
 sets: "3"
 reps: 15 - 30
 ---
+
 ```dataviewjs
 const targetPath = dv.current().file.path;
 
