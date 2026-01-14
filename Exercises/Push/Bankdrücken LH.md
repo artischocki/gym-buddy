@@ -76,3 +76,4 @@ const tableRows = rows.map(r => {
 
 dv.table(headers, tableRows);
 ```
+
