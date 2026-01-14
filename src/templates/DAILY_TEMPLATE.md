@@ -3,75 +3,52 @@ const DAILY_FOLDER = "src/resources/daily";
 const DATE_FORMAT = "DD.MM.YY";
 const LINE_PREFIX = "# Today's Workout: ";
 
-let todaysWorkout = ""
+let todaysWorkout = "";
 
 // 1) Get candidate daily notes
 const files = app.vault.getFiles()
-  .filter(f =>
-    f.path.startsWith(DAILY_FOLDER) &&
-    f.extension === "md"
-  );
+  .filter(f => f.path.startsWith(DAILY_FOLDER) && f.extension === "md");
 
-// 2) Pick the one with the latest date in its filename
+// 2) Pick the ones with a valid date in filename, sorted newest -> oldest
 const dated = files
   .map(f => {
-    const name = f.basename;
-    const m = window.moment(name, DATE_FORMAT, true);
+    const m = window.moment(f.basename, DATE_FORMAT, true);
     return m.isValid() ? { file: f, date: m } : null;
   })
   .filter(Boolean)
   .sort((a, b) => b.date.valueOf() - a.date.valueOf());
 
-if (dated.length === 1) {
-  todaysWorkout += "ERROR: No daily notes found.";
-  return;
+// If there is no previous daily (only the one just created), start with Push 1
+if (dated.length <= 1) {
+  todaysWorkout = "Push 1";
+} else {
+  // dated[0] is current/newest; dated[1] is previous
+  const lastDaily = dated[1].file;
+
+  const content = await app.vault.read(lastDaily);
+
+  const rawLine = content
+    .split(/\r?\n/)
+    .find(l => l.trim().startsWith(LINE_PREFIX));
+
+  let lastWorkout = "";
+  if (rawLine) {
+    lastWorkout = rawLine.slice(LINE_PREFIX.length).trim();
+  }
+
+  switch (lastWorkout) {
+    case "Push 1": todaysWorkout = "Pull 1"; break;
+    case "Pull 1": todaysWorkout = "Legs 1"; break;
+    case "Legs 1": todaysWorkout = "Push 2"; break;
+    case "Push 2": todaysWorkout = "Pull 2"; break;
+    case "Pull 2": todaysWorkout = "Legs 2"; break;
+    case "Legs 2": todaysWorkout = "Push 1"; break;
+    default:       todaysWorkout = "Push 1";
+  }
 }
 
-const lastDaily = dated[1].file;
-
-// 3) Read content
-const content = await app.vault.read(lastDaily);
-
-// 4) Extract the line with the last workout
-const rawLine = content
-  .split(/\r?\n/)
-  .find(l => l.trim().startsWith(LINE_PREFIX));
-
-
-if (!rawLine) { todaysWorkout += `ERROR: No line starting with "${LINE_PREFIX}" in ${lastDaily.basename}.`; return; }
-
-// extract what comes after the prefix
-const value = rawLine.slice(LINE_PREFIX.length).trim();
-const lastWorkout = value.length ? value : `(empty after ${LINE_PREFIX})`;
-
-
-
-switch(lastWorkout) {
-	case "Push 1":
-		todaysWorkout = "Pull 1";
-		break;
-	case "Pull 1":
-		todaysWorkout = "Legs 1";
-		break;
-	case "Legs 1":
-		todaysWorkout = "Push 2";
-		break;
-	case "Push 2":
-		todaysWorkout = "Pull 2";
-		break;
-	case "Pull 2":
-		todaysWorkout = "Legs 2";
-		break;
-	case "Legs 2":
-		todaysWorkout = "Push 1";
-		break;
-	default:
-		todaysWorkout = "Push 1";
-}
-
-let workoutType = todaysWorkout.slice(0,-2)
-let workoutIndex = todaysWorkout.slice(-1)
-
+let workoutType = todaysWorkout.slice(0, -2);
+let workoutIndex = todaysWorkout.slice(-1);
 %>---
 type: <% workoutType %>
 index: <% workoutIndex %>
@@ -103,9 +80,6 @@ if (!workoutFile) {
 
 const workoutMd = await app.vault.read(workoutFile);
 %>
-
-
-
 <%*
 const dv = app.plugins?.plugins?.dataview?.api;
 if (!dv) { tR += "Dataview ist nicht verfügbar."; return; }
