@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "11bf45c43505b54f",
+        "id": "cb8545a17adb3fef",
         "type": "tabs",
         "children": [
           {
-            "id": "7d9a440b69c2e0d8",
+            "id": "e30450233dee0896",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Workouts/Push 1.md",
+                "file": "src/resources/daily/14.01.26.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Push 1"
+              "title": "14.01.26"
             }
           }
         ]
@@ -194,40 +194,40 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "7d9a440b69c2e0d8",
+  "active": "e30450233dee0896",
   "lastOpenFiles": [
-    "src/templates/exercise_template.md",
-    "src/templates/DAILY_TEMPLATE.md",
-    "src/resources/daily/17.01.26.md",
-    "src/resources/daily/12.01.26.md",
-    "src/resources/daily/18.01.26.md",
-    "src/resources/daily/15.01.26.md",
     "src/resources/daily/14.01.26.md",
-    "src/resources/daily/16.01.26.md",
-    "src/resources/daily/13.01.26.md",
-    "Exercises/Push/Bankdrücken LH.md",
-    "Workouts/Push 1.md",
-    "Exercises/Push/Overhead Trizeps (Kabel).md",
-    "Exercises/Push/Trizeps Kabel (Stange).md",
-    "Exercises/Push/Seitenheben.md",
-    "Exercises/Push/Schulterdrücken KH.md",
-    "Exercises/Push/Schrägbankdrücken KH.md",
-    "Exercises/Push/Dips.md",
-    "Workouts/Legs 1.md",
     "src/resources/daily/20.01.26.md",
-    "src/resources/daily/11.01.26.md",
+    "src/resources/daily/19.01.26.md",
+    "src/resources/daily/18.01.26.md",
+    "src/resources/daily/17.01.26.md",
+    "src/resources/daily/16.01.26.md",
+    "src/resources/daily/15.01.26.md",
+    "src/templates/DAILY_TEMPLATE.md",
+    "Exercises/Push/Bankdrücken LH.md",
+    "Exercises/Legs/Beinbeuger liegend.md",
+    "src/resources/daily/13.01.26.md",
+    "Exercises/Legs/Hanging Leg Raises.md",
+    "Exercises/Legs/Wadenheben sitzend.md",
+    "Exercises/Legs/Core Maschine.md",
     "Workouts/Legs 2.md",
+    "Exercises/Legs/Beinstrecker.md",
+    "Exercises/Legs/Beinbeuger sitzend.md",
+    "Exercises/Legs/Wadenheben stehend.md",
+    "Workouts/Legs 1.md",
+    "Exercises/Legs/Situps.md",
+    "Exercises/Legs/Beinpresse.md",
+    "Exercises/Legs/Squats.md",
     "Workouts/Pull 2.md",
     "Workouts/Pull 1.md",
-    "Workouts/Push 2.md",
+    "Workouts/Push 1.md",
+    "Exercises/Pull/Curls Maschine.md",
     "Workouts/Untitled",
     "Workouts",
-    "src/resources/daily/19.01.26.md",
     "Exercises/Legs",
     "Exercises/Pull",
     "Exercises/Push",
     "Exercises",
-    "src/resources/previous_workouts.md",
     "src/resources/daily",
     "src",
     "src/resources",
