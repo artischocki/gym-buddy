@@ -14,9 +14,9 @@ The daily note gets filled with all **Exercises** defined in the **Workouts**:
 
 
 
-### Workout Files 
+## Workout Files 
 You can edit the Workouts here:
-- [[Push 1]]
+- [[Workouts/Push 1]]
 - [[Pull 1]]
 - [[Legs 1]]
 - [[Push 2]]
