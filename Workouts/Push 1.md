@@ -1,0 +1,7 @@
+# 1. [[Bankdrücken LH]]
+# 2. [[Schrägbankdrücken KH]]
+# 3. [[Dips]]
+# 4. [[Schulterdrücken KH]]
+# 5. [[Seitenheben]]
+# 6. [[Trizeps Kabel (Stange)]]
+# 7. [[Overhead Trizeps (Kabel)]]
